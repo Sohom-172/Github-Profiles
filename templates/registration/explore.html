@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Explore{% endblock %}
+
+
+{% block content %}
+{% if user.is_authenticated %}
+	<a href ="{% url 'home' %}">Back To Dashboard</a>
+	<h1> Here is a list of users on this website ! </h1>
+	{% for dudename in dudes %}
+		<li>
+		<a href="display/?value={{dudename}}"  > {{dudename}} </a>
+		</li>
+		<br>
+	{% endfor %}
+{% endif %}
+
+{% endblock %}

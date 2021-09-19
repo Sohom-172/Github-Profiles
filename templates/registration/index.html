@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashbored{% endblock %}
+
+<h2>User Profile</h2>
+
+{% block content %}
+{% if user.is_authenticated %}
+	<p>Hi {{user}}! Welmcum to dimscord</p>
+	<p>Github Name : {{user.github_full_name}}</p>
+	<p>First name : {{user.first_name}}</p>
+	<p>Last name : {{user.last_name}}</p>
+	<p>Github Link : {{user.github_link}}</p>
+	<p>Github followers : {{user.github_followers}}</p>
+	<p>Github repos : {{user.github_repos}}</p>
+	<p>last updated Git at : {{user.updated_at}}</p>
+	
+	<a href = "{% url 'update' %}">Update Profile</p>
+	<a href = "{% url 'update_now' %}">Update Now</p>
+	<a href = "{% url 'logout' %}">Logout</p>
+	<a href = "{% url 'explore' %}">Explore</p>
+{% else %}
+	<p>Jai mata di</p>
+{% endif %}
+{% endblock %}

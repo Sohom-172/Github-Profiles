@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Display{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+	
+	<p>First Name : {{first_name}}</p>
+	<p>Last Name : {{last_name}}</p>
+	<p>Github ID : {{github_ID}}</p>
+	<p>Github Link : {{github_link}}</p>
+	<p>Number of github followers : {{github_followers}}</p>
+	<p>Link to github repos : {{github_repos}}</p>
+	<p>Last updated : {{updated_at}}</p>
+	<a href = "{% url 'explore' %}">Back To Explore</a>
+{% endif %}
+{% endblock %}

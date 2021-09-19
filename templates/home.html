@@ -1,0 +1,27 @@
+<!-- templates/home.html-->
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  
+  <!--Hi {{ user.username }}!
+  <p><a href="{% url 'logout' %}">Log Out</a></p>
+  <meta http-equiv="refresh" content="7,url=index">-->
+
+  <h2>Hi {{user.username}} !</h2>
+  <h3> Would you like to explore other users ? </h3> <a href = "{% url 'explore' %}"><h3>Explore</h3></a>
+  <br>
+  <h3> See your own profile here --> </h3> <a href = "{% url 'index' %}"><h3>Profile</h3></a>
+  <br>
+  <h3> Or </h3> <a href = "{% url 'logout' %}"><h3>Logout</h3></a>
+
+{% else %}
+  <h2>Login here if you have registered before --></h2>
+  <a href="{% url 'login' %}"><h3>Log In</h3></a>
+  <br>
+  <h2>Register here if you haven't --></h2>
+  <a href="{% url 'register' %}"><h3>Register</h3></a>
+{% endif %}
+{% endblock %}

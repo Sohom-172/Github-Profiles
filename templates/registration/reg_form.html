@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<title> Register </title>
+<h1> Register </h1>
+<form method="post">
+	{% csrf_token %}
+	<!--
+	<input type="text" name='uname' placeholder="Github Username">
+	<input type="email" name="email" placeholder="email">
+	<input type="text" name="fname" placeholder="First Name">
+	<input type="text" name="lname" placeholder="Last name">
+	<input type="password" name="pass" placeholder="Password">
+	<input type="password" name="passagain" placeholder="Confirm Password">
+	<button type="submit">Submit</button>
+	-->
+	{{form.as_p}}
+	<button type="submit">Submit</button>
+
+</form>
+{% endblock %}
